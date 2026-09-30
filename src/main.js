@@ -54,8 +54,8 @@ function analyzeSalesData(data, options) {
 
     const { calculateRevenue, calculateBonus } = options;
 
-    if (!typeof calculateRevenue === "function" 
-        || !typeof calculateBonus === "function"
+    if (typeof calculateRevenue !== "function" 
+        || typeof calculateBonus !== "function"
     ) {
         throw new Error('Нет функций в объекте options');
     }
