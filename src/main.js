@@ -117,7 +117,7 @@ function analyzeSalesData(data, options) {
         sales_count: seller.sales_count,
         top_products: Object.entries(seller.top_products).reduce((acc, curr) => {
             return [...acc, {
-                id: curr[0],
+                sku: curr[0],
                 quantity: curr[1]
             }];
         }, []), // Массив объектов вида: { "sku": "SKU_008","quantity": 10}, топ-10 товаров продавца
