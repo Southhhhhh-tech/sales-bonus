@@ -52,13 +52,13 @@ function analyzeSalesData(data, options) {
         throw new Error(`Неверные входные данные`);
     }
 
+    const { calculateRevenue, calculateBonus } = options;
+
     if (!typeof calculateRevenue === "function" 
         || !typeof calculateBonus === "function"
     ) {
         throw new Error('Нет функций в объекте options');
     }
-
-    const { calculateRevenue, calculateBonus } = options;
 
     const sellerStats = data.sellers.map(seller => ({
         id: seller.id,
