@@ -48,6 +48,7 @@ function analyzeSalesData(data, options) {
         || data.purchase_records.length === 0
         || !Array.isArray(data.purchase_records)
         || !options
+        || typeof options !== "object"
     ) {
         throw new Error(`Неверные входные данные`);
     }
